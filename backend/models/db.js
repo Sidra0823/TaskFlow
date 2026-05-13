@@ -1,8 +1,13 @@
 require('dotenv').config();
 const Database = require('better-sqlite3');
 const path = require('path');
+const os = require('os');
 
-const DB_PATH = process.env.DB_PATH || './taskflow.db';
+const defaultDbPath = process.env.NODE_ENV === 'production'
+  ? path.join(os.tmpdir(), 'taskflow.db')
+  : './taskflow.db';
+
+const DB_PATH = process.env.DB_PATH || defaultDbPath;
 let db;
 
 const getDb = () => {
