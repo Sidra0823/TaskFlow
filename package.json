@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node scripts/seed.js && node server.js",
     "dev": "node scripts/seed.js && nodemon server.js",
+    "build": "echo 'Build complete'",
     "init-db": "node scripts/initDb.js",
     "seed": "node scripts/seed.js"
   },
@@ -17,9 +18,11 @@
     "express": "^4.18.3",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
+    "serverless-http": "^4.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "netlify-cli": "^26.0.1",
     "nodemon": "^3.1.0"
   },
   "engines": {
